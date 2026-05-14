@@ -1,0 +1,139 @@
+"use client";
+import React from "react";
+import _styles from "./css/classes.module.css";
+import * as _utils from "./webflow_modules/utils";
+import Block from "./webflow_modules/Basic/components/Block";
+import Heading from "./webflow_modules/Basic/components/Heading";
+import HtmlEmbed from "./webflow_modules/Embed/components/HtmlEmbed";
+
+export function HeatmapToolTip({
+  adrLabelRuntimeProps = {},
+  adrLabelSlot = "",
+  adrMetricRuntimeProps = {},
+  adrMetricSlot = "",
+  dateLabelRuntimeProps = {},
+  dateLabelSlot = "",
+  metricLabelRuntimeProps = {},
+  metricLabelSlot = "",
+  revenueLabelRuntimeProps = {},
+  revenueLabelSlot = "",
+  revenueMetric = "$240.13",
+  revenueMetricRuntimeProps = {},
+  revenueMetricSlot = "",
+  roomsLabelRuntimeProps = {},
+  roomsLabelSlot = "",
+  roomsMetricRuntimeProps = {},
+  roomsMetricSlot = "",
+  title1 = "Picked Up",
+}) {
+  return (
+    <Block
+      className={_utils.cx(
+        _styles,
+        "heat-map_tool-tip-wrapper",
+        "is-heat-chart"
+      )}
+      tag={"div"}
+    >
+      <Heading
+        className={_utils.cx(_styles, "heatmap_tooltip-metric-label")}
+        tag={"h1"}
+        {...metricLabelRuntimeProps}
+      >
+        {metricLabelSlot ?? title1}
+      </Heading>
+      <Heading
+        className={_utils.cx(_styles, "heatmap_tooltip-label")}
+        tag={"h1"}
+        {...dateLabelRuntimeProps}
+      >
+        {dateLabelSlot ?? "Saturday, June 15"}
+      </Heading>
+      <Block className={_utils.cx(_styles, "tool-tip_wrapper")} tag={"div"}>
+        <Block
+          className={_utils.cx(_styles, "heatmap_metric-wrapper")}
+          tag={"div"}
+        >
+          <Block
+            className={_utils.cx(_styles, "heatmap_item-wrapper")}
+            tag={"div"}
+          >
+            <HtmlEmbed
+              className={_utils.cx(_styles, "arrowcircleup")}
+              content={""}
+              value={
+                "%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%0A%3Csvg%20id%3D%22ArrowCircleUp%22%20data-name%3D%22ArrowCircleUp%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20fill%3D%22currentColor%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%3E%0A%20%20%3Cpath%20d%3D%22M12%2C3C7%2C3%2C3%2C7%2C3%2C12s4%2C9%2C9%2C9%2C9-4%2C9-9S17%2C3%2C12%2C3ZM15.326%2C10.589c-.051.099-.153.161-.264.161h-1.437v3.856c0%2C.164-.133.297-.297.297h-2.658c-.164%2C0-.297-.133-.297-.296v-3.856s-1.436%2C0-1.436%2C0c-.111%2C0-.213-.062-.264-.161-.051-.099-.043-.218.022-.308l3.052-4.294c.056-.078.145-.125.241-.125h0c.096%2C0%2C.185.046.241.124l3.072%2C4.294c.065.091.074.21.023.308Z%22%2F%3E%0A%3C%2Fsvg%3E"
+              }
+            />
+            <Block
+              className={_utils.cx(_styles, "tool-tip_metric", "is-numeric")}
+              tag={"div"}
+              {...roomsMetricRuntimeProps}
+            >
+              {roomsMetricSlot ?? "10"}
+            </Block>
+            <Block
+              className={_utils.cx(_styles, "tool-tip_label", "is-center")}
+              tag={"div"}
+              {...roomsLabelRuntimeProps}
+            >
+              {roomsLabelSlot ?? "Rooms"}
+            </Block>
+          </Block>
+          <Block
+            className={_utils.cx(_styles, "heatmap_item-wrapper")}
+            tag={"div"}
+          >
+            <HtmlEmbed
+              className={_utils.cx(_styles, "arrowcircleup")}
+              content={""}
+              value={
+                "%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%0A%3Csvg%20id%3D%22ArrowCircleUp%22%20data-name%3D%22ArrowCircleUp%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20fill%3D%22currentColor%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%3E%0A%20%20%3Cpath%20d%3D%22M12%2C3C7%2C3%2C3%2C7%2C3%2C12s4%2C9%2C9%2C9%2C9-4%2C9-9S17%2C3%2C12%2C3ZM15.326%2C10.589c-.051.099-.153.161-.264.161h-1.437v3.856c0%2C.164-.133.297-.297.297h-2.658c-.164%2C0-.297-.133-.297-.296v-3.856s-1.436%2C0-1.436%2C0c-.111%2C0-.213-.062-.264-.161-.051-.099-.043-.218.022-.308l3.052-4.294c.056-.078.145-.125.241-.125h0c.096%2C0%2C.185.046.241.124l3.072%2C4.294c.065.091.074.21.023.308Z%22%2F%3E%0A%3C%2Fsvg%3E"
+              }
+            />
+            <Block
+              className={_utils.cx(_styles, "tool-tip_metric", "is-currency")}
+              tag={"div"}
+              {...adrMetricRuntimeProps}
+            >
+              {adrMetricSlot ?? revenueMetric}
+            </Block>
+            <Block
+              className={_utils.cx(_styles, "tool-tip_label", "is-center")}
+              tag={"div"}
+              {...adrLabelRuntimeProps}
+            >
+              {adrLabelSlot ?? "ADR"}
+            </Block>
+          </Block>
+          <Block
+            className={_utils.cx(_styles, "heatmap_item-wrapper")}
+            tag={"div"}
+          >
+            <HtmlEmbed
+              className={_utils.cx(_styles, "arrowcircleup")}
+              content={""}
+              value={
+                "%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%0A%3Csvg%20id%3D%22ArrowCircleUp%22%20data-name%3D%22ArrowCircleUp%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20fill%3D%22currentColor%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%3E%0A%20%20%3Cpath%20d%3D%22M12%2C3C7%2C3%2C3%2C7%2C3%2C12s4%2C9%2C9%2C9%2C9-4%2C9-9S17%2C3%2C12%2C3ZM15.326%2C10.589c-.051.099-.153.161-.264.161h-1.437v3.856c0%2C.164-.133.297-.297.297h-2.658c-.164%2C0-.297-.133-.297-.296v-3.856s-1.436%2C0-1.436%2C0c-.111%2C0-.213-.062-.264-.161-.051-.099-.043-.218.022-.308l3.052-4.294c.056-.078.145-.125.241-.125h0c.096%2C0%2C.185.046.241.124l3.072%2C4.294c.065.091.074.21.023.308Z%22%2F%3E%0A%3C%2Fsvg%3E"
+              }
+            />
+            <Block
+              className={_utils.cx(_styles, "tool-tip_metric", "is-currency")}
+              tag={"div"}
+              {...revenueMetricRuntimeProps}
+            >
+              {revenueMetricSlot ?? "$240.13"}
+            </Block>
+            <Block
+              className={_utils.cx(_styles, "tool-tip_label", "is-center")}
+              tag={"div"}
+              {...revenueLabelRuntimeProps}
+            >
+              {revenueLabelSlot ?? "Revenue"}
+            </Block>
+          </Block>
+        </Block>
+      </Block>
+    </Block>
+  );
+}
